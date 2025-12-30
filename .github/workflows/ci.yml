@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-migrate:
+  build-and-test:
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --max-old-space-size=4096
@@ -24,16 +24,8 @@ jobs:
       - name: Generate Prisma client
         run: npx prisma generate
 
-      - name: Run migrations (production)
-        if: env.DATABASE_URL != '' || github.event_name == 'push'
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: |
-          if [ -z "$DATABASE_URL" ]; then echo "Skipping prisma migrate: DATABASE_URL not set"; exit 0; fi
-          npx prisma migrate deploy
-
       - name: Build app
         run: npm run build
 
       - name: Test build
-        run: echo "Build completed"
+        run: echo "Build completed successfully"
