@@ -1,5 +1,5 @@
 # Production Dockerfile for Wasp app (intended for Railway)
-# This image builds the app and runs the Wasp start command.
+# This image builds the app and runs with migrations on startup.
 
 FROM node:20-alpine AS builder
 
@@ -25,17 +25,9 @@ COPY --from=builder /app .
 # Install only production deps
 RUN npm ci --production
 
+# Copy migration wrapper script
+COPY .npm-start-with-migrate.sh .
+
 EXPOSE 3000 3001 3002
 
-CMD ["npm", "run", "start"]
-
-# Install deps (including the local wasp SDK path)
-RUN npm ci --production
-
-# Expose the default ports the dev server may use (Railway will map)
-EXPOSE 3000 3001 3002
-
-ENV NODE_ENV=production
-
-# Expect Railway to set DATABASE_URL env var. Do not run migrations here automatically.
-CMD ["npm", "run", "start"]
+CMD ["./.npm-start-with-migrate.sh"]
