@@ -1,0 +1,12 @@
+node_modules
+.migrations
+.migrate
+.env
+.env.*
+.dev.db
+dist
+build
+.vscode
+.idea
+.git
+**/node_modules
