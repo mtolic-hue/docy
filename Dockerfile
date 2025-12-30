@@ -17,9 +17,7 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate || true
 
-# Copy migration wrapper script
-COPY .npm-start-with-migrate.sh .
-
 EXPOSE 3000 3001 3002
 
-CMD ["./.npm-start-with-migrate.sh"]
+# Run migrations (if DATABASE_URL exists) then start the app
+CMD ["sh", "-c", "if [ -n \"$DATABASE_URL\" ]; then npx prisma migrate deploy --schema=./schema.prisma || true; fi && npm run start"]
