@@ -34,10 +34,15 @@
     "skipLibCheck": true,
     "outDir": "dist",
     "target": "es2022",
-    "lib" : ["es2023"]
+    "lib" : ["es2023"],
+    "jsx": "preserve"
   },
   "include": [
-    "src",
-    "/src"
+    "src"
+  ],
+  "exclude": [
+    "../src",
+    "/src",
+    "node_modules"
   ]
 }
