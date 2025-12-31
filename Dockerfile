@@ -8,6 +8,8 @@ WORKDIR /app
 COPY server/package.json server/package-lock.json server/tsconfig.json server/rollup.config.js server/.npmrc ./
 COPY sdk/wasp ./sdk/wasp
 COPY server/src ./src
+# Copy app source to /src so generated imports like '../../../../../src/...'
+# resolve during server build.
 COPY src /src
 COPY db ./db
 RUN npm ci

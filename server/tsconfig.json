@@ -16,13 +16,18 @@
     // Before changing this property, ensure you're aware of the implications:
     //  - https://github.com/wasp-lang/wasp/pull/1584#discussion_r1404019301
     //  - https://github.com/wasp-lang/wasp/pull/1713/files#diff-58191eecd9cc55f71c73de89420df8b1866dce38ad35f4ef0f6f8874616eda77R32
-    "rootDir": ".",
+    "rootDir": "/",
     // Enable source map for debugging
     "sourceMap": true,
     // We are using rollup and extensionless imports, our module and module
     // resolution reflect that.
     "module": "preserve",
     "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "wasp/*": ["./sdk/wasp/*", "./sdk/wasp/dist/*"],
+      "src/*": ["/src/*"]
+    },
     // The remaining settings should match the extended nodeXY/tsconfig.json, but I kept
     // them here to be explicit.
     "esModuleInterop": true,
@@ -32,6 +37,7 @@
     "lib" : ["es2023"]
   },
   "include": [
-    "src"
+    "src",
+    "/src"
   ]
 }
