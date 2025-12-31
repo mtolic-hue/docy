@@ -27,7 +27,7 @@ app myWaspApp {
     onAuthFailedRedirectTo: "/login",
   },
   emailSender: {
-    provider: Dummy,
+    provider: SendGrid,
   },
   client: {
     rootComponent: import { App } from "@src/App.tsx",

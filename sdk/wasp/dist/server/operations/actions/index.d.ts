@@ -1,0 +1,20 @@
+import { type AuthenticatedOperationFor } from '../wrappers.js';
+import { createTask as createTask_ext } from 'wasp/src/tasks/actions';
+import { updateTaskStatus as updateTaskStatus_ext } from 'wasp/src/tasks/actions';
+import { deleteCompletedTasks as deleteCompletedTasks_ext } from 'wasp/src/tasks/actions';
+import { createTag as createTag_ext } from 'wasp/src/tags/actions';
+import { createChild as createChild_ext } from 'wasp/src/children/actions';
+import { createCheck as createCheck_ext } from 'wasp/src/children/actions';
+export type CreateTask_ext = typeof createTask_ext;
+export declare const createTask: AuthenticatedOperationFor<CreateTask_ext>;
+export type UpdateTaskStatus_ext = typeof updateTaskStatus_ext;
+export declare const updateTaskStatus: AuthenticatedOperationFor<UpdateTaskStatus_ext>;
+export type DeleteCompletedTasks_ext = typeof deleteCompletedTasks_ext;
+export declare const deleteCompletedTasks: AuthenticatedOperationFor<DeleteCompletedTasks_ext>;
+export type CreateTag_ext = typeof createTag_ext;
+export declare const createTag: AuthenticatedOperationFor<CreateTag_ext>;
+export type CreateChild_ext = typeof createChild_ext;
+export declare const createChild: AuthenticatedOperationFor<CreateChild_ext>;
+export type CreateCheck_ext = typeof createCheck_ext;
+export declare const createCheck: AuthenticatedOperationFor<CreateCheck_ext>;
+//# sourceMappingURL=index.d.ts.map
