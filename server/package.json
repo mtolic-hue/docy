@@ -21,14 +21,17 @@
     "node": ">=20.0.0"
   },
   "prisma": {},
-  "dependencies": {"cookie-parser": "~1.4.6",
-  "cors": "^2.8.5",
-  "dotenv": "^16.0.2",
-  "express": "~5.1.0",
-  "helmet": "^6.0.0",
-  "morgan": "~1.10.0",
-  "superjson": "^2.2.1"
-},
+  "dependencies": {
+    "@prisma/client": "5.19.1",
+    "cookie-parser": "~1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "~5.1.0",
+    "helmet": "^6.0.0",
+    "morgan": "~1.10.0",
+    "prisma": "5.19.1",
+    "superjson": "^2.2.1"
+  },
   "devDependencies": {"@rollup/plugin-node-resolve": "^16.0.0",
   "@tsconfig/node20": "latest",
   "@types/cors": "^2.8.5",
