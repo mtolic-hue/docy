@@ -29,6 +29,7 @@
     "express": "~5.1.0",
     "helmet": "^6.0.0",
     "morgan": "~1.10.0",
+    "wasp": "file:../sdk/wasp",
     "prisma": "5.19.1",
     "superjson": "^2.2.1"
   },
